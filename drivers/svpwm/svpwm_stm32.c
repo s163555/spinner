@@ -251,7 +251,7 @@ static int svpwm_stm32_init(const struct device *dev)
 	brk_dt_init.DeadTime = 0U;
 	brk_dt_init.BreakState = LL_TIM_BREAK_ENABLE;
 	brk_dt_init.BreakPolarity = LL_TIM_BREAK_POLARITY_HIGH;
-	brk_dt_init.Break2State = LL_TIM_BREAK2_ENABLE;
+	//brk_dt_init.Break2State = LL_TIM_BREAK2_ENABLE;
 	if (LL_TIM_BDTR_Init(config->timer, &brk_dt_init) != SUCCESS) {
 		LOG_ERR("Could not initialize timer break");
 		return -EIO;

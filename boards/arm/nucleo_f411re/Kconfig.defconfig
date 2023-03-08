@@ -1,0 +1,12 @@
+# Copyright (c) 2021 Teslabs Engineering S.L.
+# SPDX-License-Identifier: Apache-2.0
+
+if BOARD_NUCLEOF411RE
+
+config BOARD
+	default "nucleof411re"
+
+config FPU
+	default y
+
+endif # BOARD_NUCLEOF411RE

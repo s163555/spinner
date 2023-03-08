@@ -82,12 +82,12 @@ static uint32_t adc_calc_jsqr(uint32_t trigger, uint32_t rank1_ch,
 	ch2--;
 #endif
 
-	jsqr = ((ch1 & ADC_INJ_RANK_ID_JSQR_MASK)
+	/*jsqr = ((ch1 & ADC_INJ_RANK_ID_JSQR_MASK)
 		<< ADC_INJ_RANK_1_JSQR_BITOFFSET_POS) |
 	       ((ch2 & ADC_INJ_RANK_ID_JSQR_MASK)
 		<< ADC_INJ_RANK_2_JSQR_BITOFFSET_POS) |
 	       LL_ADC_INJ_TRIG_EXT_RISING | trigger | 1U;
-
+*/
 	return jsqr;
 }
 
@@ -148,7 +148,7 @@ static int adc_configure(const struct device *dev)
 
 	/* configure ADC (regular) */
 	LL_ADC_REG_StructInit(&adc_rinit);
-	adc_rinit.Overrun = LL_ADC_REG_OVR_DATA_PRESERVED;
+	//adc_rinit.Overrun = LL_ADC_REG_OVR_DATA_PRESERVED;
 	if (LL_ADC_REG_Init(config->adc, &adc_rinit) != SUCCESS) {
 		LOG_ERR("Could not initialize ADC regular group");
 		return -EIO;
@@ -178,18 +178,18 @@ static int adc_configure(const struct device *dev)
 #if defined(CONFIG_SOC_SERIES_STM32G4X)
 	LL_ADC_DisableDeepPowerDown(config->adc);
 #endif
-	LL_ADC_EnableInternalRegulator(config->adc);
-	k_busy_wait(LL_ADC_DELAY_INTERNAL_REGUL_STAB_US);
-	if (!LL_ADC_IsInternalRegulatorEnabled(config->adc)) {
+	//LL_ADC_EnableInternalRegulator(config->adc);
+	//k_busy_wait(LL_ADC_DELAY_INTERNAL_REGUL_STAB_US);
+	/*if (!LL_ADC_IsInternalRegulatorEnabled(config->adc)) {
 		LOG_ERR("ADC internal regulator not enabled within expected "
 			"time");
 		return -EIO;
-	}
+	}*/
 
 	/* calibrate ADC */
-	LL_ADC_StartCalibration(config->adc, LL_ADC_SINGLE_ENDED);
+	/*LL_ADC_StartCalibration(config->adc, LL_ADC_SINGLE_ENDED);
 	while (LL_ADC_IsCalibrationOnGoing(config->adc))
-		;
+		;*/
 
 	/* wait to enable ADC after calibration */
 	ret = stm32_adc_clk_get(config->adc, &config->pclken, &adc_clk);
@@ -197,12 +197,12 @@ static int adc_configure(const struct device *dev)
 		return ret;
 	}
 
-	k_busy_wait(MAX(1U, (uint32_t)((1e6 / (float)adc_clk) *
+	/*k_busy_wait(MAX(1U, (uint32_t)((1e6 / (float)adc_clk) *
 				       LL_ADC_DELAY_CALIB_ENABLE_ADC_CYCLES)));
-
+*/
 	/* enable ADC */
 	LL_ADC_Enable(config->adc);
-	while (LL_ADC_IsActiveFlag_ADRDY(config->adc) != 1U)
+//	while (LL_ADC_IsActiveFlag_ADRDY(config->adc) != 1U)
 		;
 
 	/* configure ADC IRQ */
@@ -233,11 +233,11 @@ static uint16_t adc_read(const struct device *dev, uint32_t channel)
 	LL_ADC_REG_SetSequencerRanks(config->adc, LL_ADC_REG_RANK_1, channel);
 
 	/* perform regular conversion */
-	LL_ADC_REG_StartConversion(config->adc);
+/*	LL_ADC_REG_StartConversion(config->adc);
 	while (LL_ADC_IsActiveFlag_EOS(config->adc) != 1U)
 		;
 
-	LL_ADC_ClearFlag_EOS(config->adc);
+	LL_ADC_ClearFlag_EOS(config->adc);*/
 
 	return (uint16_t)LL_ADC_REG_ReadConversionData32(config->adc);
 }
@@ -352,27 +352,27 @@ static void currsmp_shunt_stm32_start(const struct device *dev)
 	struct currsmp_shunt_stm32_data *data = dev->data;
 
 	/* calibrate a, b, c offset */
-	LL_ADC_ClearFlag_EOS(config->adc);
+/*	LL_ADC_ClearFlag_EOS(config->adc);
 
 	data->i_a_offset = adc_read(dev, config->adc_ch_a);
 	data->i_b_offset = adc_read(dev, config->adc_ch_b);
-	data->i_c_offset = adc_read(dev, config->adc_ch_c);
+	data->i_c_offset = adc_read(dev, config->adc_ch_c);*/
 
 	/* start injected conversions (triggered by sv-pwm) */
-	LL_ADC_ClearFlag_JEOS(config->adc);
-	LL_ADC_INJ_StartConversion(config->adc);
+	/*LL_ADC_ClearFlag_JEOS(config->adc);
+	LL_ADC_INJ_StartConversion(config->adc);*/
 }
 
 static void currsmp_shunt_stm32_stop(const struct device *dev)
 {
 	const struct currsmp_shunt_stm32_config *config = dev->config;
 
-	LL_ADC_INJ_StopConversion(config->adc);
+	/*LL_ADC_INJ_StopConversion(config->adc);
 	while (LL_ADC_INJ_IsStopConversionOngoing(config->adc) != 0U)
 		;
 
 	while (LL_ADC_INJ_IsConversionOngoing(config->adc) != 0U)
-		;
+		;*/
 }
 
 static void currsmp_shunt_stm32_pause(const struct device *dev)

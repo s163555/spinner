@@ -110,14 +110,14 @@ int stm32_adc_clk_get(ADC_TypeDef *adc, const struct stm32_pclken *pclken,
 	/* obtain divisor */
 	div = LL_ADC_GetCommonClock(__LL_ADC_COMMON_INSTANCE(adc));
 	switch (div) {
-	case LL_ADC_CLOCK_SYNC_PCLK_DIV1:
+	/*case LL_ADC_CLOCK_SYNC_PCLK_DIV1:
 		break;
 	case LL_ADC_CLOCK_SYNC_PCLK_DIV2:
 		*clk = *clk >> 1U;
 		break;
 	case LL_ADC_CLOCK_SYNC_PCLK_DIV4:
 		*clk = *clk >> 2U;
-		break;
+		break;*/
 	default:
 		return -ENOTSUP;
 	}

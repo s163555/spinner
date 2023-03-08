@@ -1,0 +1,114 @@
+/*
+ * Copyright (c) 2021 Teslabs Engineering S.L.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+ /dts-v1/;
+ #include <st/f4/stm32f411Xe.dtsi>
+ #include <st/f4/stm32f411r(c-e)tx-pinctrl.dtsi>
+ //#include <dts-bindings/adc/stm32f4xx.h>
+ 
+ / {
+    model = "STMicroelectronics STM32F411RE-NUCLEO board";
+	compatible = "st,stm32f411re-nucleo";
+ 
+	chosen {
+		zephyr,console = &usart2;
+		zephyr,shell-uart = &usart2;
+		zephyr,sram = &sram0;
+		zephyr,flash = &flash0;
+	};
+ };
+ 
+ &clk_hse {
+	hse-bypass;
+	clock-frequency = <DT_FREQ_M(8)>; /* STLink 8MHz clock */
+	status = "okay";
+};
+ 
+&pll {
+	div-m = <8>;
+	mul-n = <384>;
+	div-p = <4>;
+	div-q = <8>;
+	clocks = <&clk_hse>;
+	status = "okay";
+};
+ 
+&rcc {
+	clocks = <&pll>;
+	clock-frequency = <DT_FREQ_M(96)>;
+	ahb-prescaler = <1>;
+	apb1-prescaler = <2>;
+	apb2-prescaler = <1>;
+};
+ 
+ &gpioc {
+     status = "okay";
+ };
+ 
+ &timers1 {
+     svpwm: svpwm {
+         compatible = "st,stm32-svpwm";
+         status = "okay";
+         //st,prescaler = < 1 >;
+         pinctrl-0 = <&tim1_ch1_pa8 &tim1_ch2_pa9 &tim1_ch3_pa10 &tim1_ocp_pa11>;
+         pinctrl-names = "default";
+         currsmp = <&currsmp>;
+         driver {
+             compatible = "st,stspin830";
+             enable-gpios = <&gpiob 13 GPIO_ACTIVE_HIGH>,
+                        <&gpiob 14 GPIO_ACTIVE_HIGH>,
+                        <&gpiob 15 GPIO_ACTIVE_HIGH>;
+         };
+     };
+ };
+ 
+ &adc1 {
+     currsmp: currsmp {
+         compatible = "st,stm32-currsmp-shunt";
+         pinctrl-0 = <&adc1_in1_pa1 &adc1_in12_pc2 &adc1_in15_pc5>;
+         pinctrl-names = "default";
+ 
+         adc-resolution = <12>;
+         adc-tsample = <3>;
+         adc-channels = <1 12 15>;
+         //adc-trigger = <LL_ADC_INJ_TRIG_EXT_TIM1_TRGO>;
+         adc-trigger = <((1<<16) | (1>>20))>;
+     };
+ };
+ 
+ &timers2 {
+     feedback: feedback {
+         compatible = "st,stm32-halls";
+ 
+         pinctrl-0 = <&tim2_ch1_pa15 &tim2_ch2_pb3 &tim2_ch3_pb10>;
+         pinctrl-names = "default";
+ 
+         h1-gpios = <&gpioa 15 0>;
+         h2-gpios = <&gpiob 3 0>;
+         h3-gpios = <&gpiob 10 0>;
+         phase-shift = <60>;
+     };
+ };
+ 
+ &timers4 {
+    status = "okay";
+    st,prescaler = < 10 >;
+    pwm4: pwm4 {
+        compatible = "st,stm32-pwm";
+        status = "okay";
+        pinctrl-0 = <&tim4_ch1_pb6>;
+        pinctrl-names = "default";
+        #pwm-cells = < 3 >;
+    };
+};
+
+ /* FIXME: missing upstream */
+ &pinctrl {
+     tim1_ocp_pa11: tim1_ocp_pa11 {
+         pinmux = <STM32_PINMUX('A', 11, AF12)>;
+     };
+ };
+ 
