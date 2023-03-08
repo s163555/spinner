@@ -7,6 +7,7 @@
 
 void main(void)
 {
-	cloop_start();
-	cloop_set_ref(0.0f, 0.25f);
+	//cloop_start();
+	//cloop_set_ref(0.0f, 0.25f);
+	printk("Test af main");
 }

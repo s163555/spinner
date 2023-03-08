@@ -1,0 +1,6 @@
+menu "spinner (C:/Users/Jeppe/projects/spinner/spinner)"
+osource "C:/Users/Jeppe/projects/spinner/spinner/Kconfig"
+config ZEPHYR_SPINNER_MODULE
+	bool
+	default y
+endmenu

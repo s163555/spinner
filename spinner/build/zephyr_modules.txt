@@ -1,0 +1,3 @@
+"spinner":"C:/Users/Jeppe/projects/spinner/spinner":"C:/Users/Jeppe/projects/spinner/spinner"
+"cmsis":"C:/Users/Jeppe/projects/spinner/modules/hal/cmsis":"C:/Users/Jeppe/projects/spinner/modules/hal/cmsis"
+"stm32":"C:/Users/Jeppe/projects/spinner/modules/hal/stm32":"C:/Users/Jeppe/projects/spinner/modules/hal/stm32"
