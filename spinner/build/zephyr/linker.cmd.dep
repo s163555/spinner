@@ -12,7 +12,7 @@ linker.cmd: \
  C:/Users/Jeppe/projects/spinner/zephyr/include/zephyr/sys/util_macro.h \
  C:/Users/Jeppe/projects/spinner/zephyr/include/zephyr/sys/util_internal.h \
  C:/Users/Jeppe/projects/spinner/zephyr/include/zephyr/sys/util_loops.h \
- c:\users\jeppe\zephyr-sdk-0.15.2\arm-zephyr-eabi\lib\gcc\arm-zephyr-eabi\12.1.0\include\stdbool.h \
+ C:/Users/Jeppe/projects/spinner/zephyr/lib/libc/minimal/include/stdbool.h \
  C:/Users/Jeppe/projects/spinner/zephyr/include/zephyr/devicetree/io-channels.h \
  C:/Users/Jeppe/projects/spinner/zephyr/include/zephyr/devicetree/clocks.h \
  C:/Users/Jeppe/projects/spinner/zephyr/include/zephyr/devicetree/gpio.h \

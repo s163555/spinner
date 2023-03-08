@@ -8,7 +8,9 @@ events:
       - "C:/Users/Jeppe/projects/spinner/zephyr/cmake/modules/kernel.cmake:128 (project)"
       - "C:/Users/Jeppe/projects/spinner/zephyr/cmake/modules/zephyr_default.cmake:122 (include)"
       - "C:/Users/Jeppe/projects/spinner/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
-      - "C:/Users/Jeppe/projects/spinner/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "C:/Users/Jeppe/projects/spinner/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:125 (include_boilerplate)"
+      - "C:/Users/Jeppe/zephyrproject/zephyr/share/zephyr-package/cmake/zephyr_package_search.cmake:117 (include)"
+      - "C:/Users/Jeppe/zephyrproject/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:152 (check_zephyr_package)"
       - "CMakeLists.txt:8 (find_package)"
     message: |
       The target system is: Generic - 3.3.99 - arm
@@ -22,7 +24,9 @@ events:
       - "C:/Users/Jeppe/projects/spinner/zephyr/cmake/modules/kernel.cmake:128 (project)"
       - "C:/Users/Jeppe/projects/spinner/zephyr/cmake/modules/zephyr_default.cmake:122 (include)"
       - "C:/Users/Jeppe/projects/spinner/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
-      - "C:/Users/Jeppe/projects/spinner/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "C:/Users/Jeppe/projects/spinner/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:125 (include_boilerplate)"
+      - "C:/Users/Jeppe/zephyrproject/zephyr/share/zephyr-package/cmake/zephyr_package_search.cmake:117 (include)"
+      - "C:/Users/Jeppe/zephyrproject/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:152 (check_zephyr_package)"
       - "CMakeLists.txt:8 (find_package)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
@@ -46,7 +50,9 @@ events:
       - "C:/Users/Jeppe/projects/spinner/zephyr/cmake/modules/kernel.cmake:128 (project)"
       - "C:/Users/Jeppe/projects/spinner/zephyr/cmake/modules/zephyr_default.cmake:122 (include)"
       - "C:/Users/Jeppe/projects/spinner/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
-      - "C:/Users/Jeppe/projects/spinner/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "C:/Users/Jeppe/projects/spinner/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:125 (include_boilerplate)"
+      - "C:/Users/Jeppe/zephyrproject/zephyr/share/zephyr-package/cmake/zephyr_package_search.cmake:117 (include)"
+      - "C:/Users/Jeppe/zephyrproject/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:152 (check_zephyr_package)"
       - "CMakeLists.txt:8 (find_package)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
@@ -72,46 +78,24 @@ events:
       - "C:/Users/Jeppe/projects/spinner/zephyr/cmake/modules/kernel.cmake:128 (project)"
       - "C:/Users/Jeppe/projects/spinner/zephyr/cmake/modules/zephyr_default.cmake:122 (include)"
       - "C:/Users/Jeppe/projects/spinner/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
-      - "C:/Users/Jeppe/projects/spinner/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
-      - "CMakeLists.txt:8 (find_package)"
-    message: |
-      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
-      Compiler: C:/Users/Jeppe/zephyr-sdk-0.15.2/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc.exe 
-      Build flags: 
-      Id flags:  
-      
-      The output was:
-      1
-      c:/users/jeppe/zephyr-sdk-0.15.2/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.1.0/../../../../arm-zephyr-eabi/bin/ld.exe: c:/users/jeppe/zephyr-sdk-0.15.2/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.1.0/../../../../arm-zephyr-eabi/lib\\libc.a(lib_a-exit.o): in function `exit':
-      exit.c:(.text.exit+0x34): undefined reference to `_exit'
-      collect2.exe: error: ld returned 1 exit status
-      
-      
-  -
-    kind: "message-v1"
-    backtrace:
-      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "C:/Users/Jeppe/projects/spinner/zephyr/cmake/modules/kernel.cmake:128 (project)"
-      - "C:/Users/Jeppe/projects/spinner/zephyr/cmake/modules/zephyr_default.cmake:122 (include)"
-      - "C:/Users/Jeppe/projects/spinner/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
-      - "C:/Users/Jeppe/projects/spinner/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "C:/Users/Jeppe/projects/spinner/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:125 (include_boilerplate)"
+      - "C:/Users/Jeppe/zephyrproject/zephyr/share/zephyr-package/cmake/zephyr_package_search.cmake:117 (include)"
+      - "C:/Users/Jeppe/zephyrproject/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:152 (check_zephyr_package)"
       - "CMakeLists.txt:8 (find_package)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-      Compiler: C:/Users/Jeppe/zephyr-sdk-0.15.2/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc.exe 
+      Compiler: C:/Strawberry/c/bin/g++.exe 
       Build flags: 
-      Id flags: -c 
+      Id flags:  
       
       The output was:
       0
       
       
-      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.o"
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
       
       The CXX compiler identification is GNU, found in:
-        C:/Users/Jeppe/projects/spinner/spinner/spinner/build/CMakeFiles/3.26.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.o
+        C:/Users/Jeppe/projects/spinner/spinner/spinner/build/CMakeFiles/3.26.0-rc2/CompilerIdCXX/a.exe
       
   -
     kind: "message-v1"
@@ -121,7 +105,9 @@ events:
       - "C:/Users/Jeppe/projects/spinner/zephyr/cmake/modules/kernel.cmake:134 (enable_language)"
       - "C:/Users/Jeppe/projects/spinner/zephyr/cmake/modules/zephyr_default.cmake:122 (include)"
       - "C:/Users/Jeppe/projects/spinner/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
-      - "C:/Users/Jeppe/projects/spinner/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "C:/Users/Jeppe/projects/spinner/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:125 (include_boilerplate)"
+      - "C:/Users/Jeppe/zephyrproject/zephyr/share/zephyr-package/cmake/zephyr_package_search.cmake:117 (include)"
+      - "C:/Users/Jeppe/zephyrproject/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:152 (check_zephyr_package)"
       - "CMakeLists.txt:8 (find_package)"
     message: |
       Checking whether the ASM compiler is GNU using "--version" matched "(GNU assembler)|(GCC)|(Free Software Foundation)":

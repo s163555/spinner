@@ -1,6 +1,6 @@
-# 0 "C:/Users/Jeppe/projects/spinner/zephyr/misc/empty_file.c"
-# 0 "<built-in>"
-# 0 "<command-line>"
+# 1 "C:/Users/Jeppe/projects/spinner/zephyr/misc/empty_file.c"
+# 1 "<built-in>"
+# 1 "<command-line>"
 # 1 "C:/Users/Jeppe/projects/spinner/spinner/boards/arm/nucleo_f411re/nucleo_f411re.dts" 1
 
 
@@ -1882,6 +1882,13 @@
  apb2-prescaler = <1>;
 };
 
+&usart2 {
+ pinctrl-0 = <&usart2_tx_pa2 &usart2_rx_pa3>;
+ pinctrl-names = "default";
+ current-speed = <115200>;
+ status = "okay";
+};
+
  &gpioc {
      status = "okay";
  };
@@ -1949,5 +1956,5 @@
          pinmux = <((((('A') - 'A') & 0xFU) << 9U) | (((11) & 0xFU) << 5U) | (((0xc) & 0x1FU) << 0U))>;
      };
  };
-# 0 "<command-line>" 2
+# 1 "<command-line>" 2
 # 1 "C:/Users/Jeppe/projects/spinner/zephyr/misc/empty_file.c"

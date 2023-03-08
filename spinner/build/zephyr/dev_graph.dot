@@ -2,29 +2,20 @@
 digraph "Device dependency graph" {
 	8 [label="rcc@40023800\nOrdinal: 8 | Handle: 1\n/soc/rcc@40023800"]
 	28 [label="interrupt-controller@40013c00\nOrdinal: 28 | Handle: 2\n/soc/interrupt-controller@40013c00"]
-	52 [label="gpio@40021c00\nOrdinal: 52 | Handle: 3\n/soc/pin-controller@40020000/gpio@40021c00"]
-	51 [label="gpio@40021800\nOrdinal: 51 | Handle: 4\n/soc/pin-controller@40020000/gpio@40021800"]
-	50 [label="gpio@40021400\nOrdinal: 50 | Handle: 5\n/soc/pin-controller@40020000/gpio@40021400"]
-	49 [label="gpio@40021000\nOrdinal: 49 | Handle: 6\n/soc/pin-controller@40020000/gpio@40021000"]
-	48 [label="gpio@40020c00\nOrdinal: 48 | Handle: 7\n/soc/pin-controller@40020000/gpio@40020c00"]
-	47 [label="gpio@40020800\nOrdinal: 47 | Handle: 8\n/soc/pin-controller@40020000/gpio@40020800"]
-	58 [label="gpio@40020400\nOrdinal: 58 | Handle: 9\n/soc/pin-controller@40020000/gpio@40020400"]
-	57 [label="gpio@40020000\nOrdinal: 57 | Handle: 10\n/soc/pin-controller@40020000/gpio@40020000"]
-	62 [label="feedback\nOrdinal: 62 | Handle: 11\n/soc/timers@40000000/feedback"]
-	85 [label="currsmp\nOrdinal: 85 | Handle: 12\n/soc/adc@40012000/currsmp"]
-	90 [label="svpwm\nOrdinal: 90 | Handle: 13\n/soc/timers@40010000/svpwm"]
-	8 -> 51
-	8 -> 58
-	8 -> 62
-	8 -> 47
-	8 -> 50
-	8 -> 90
-	8 -> 85
+	54 [label="gpio@40021c00\nOrdinal: 54 | Handle: 3\n/soc/pin-controller@40020000/gpio@40021c00"]
+	53 [label="gpio@40021800\nOrdinal: 53 | Handle: 4\n/soc/pin-controller@40020000/gpio@40021800"]
+	52 [label="gpio@40021400\nOrdinal: 52 | Handle: 5\n/soc/pin-controller@40020000/gpio@40021400"]
+	51 [label="gpio@40021000\nOrdinal: 51 | Handle: 6\n/soc/pin-controller@40020000/gpio@40021000"]
+	50 [label="gpio@40020c00\nOrdinal: 50 | Handle: 7\n/soc/pin-controller@40020000/gpio@40020c00"]
+	49 [label="gpio@40020800\nOrdinal: 49 | Handle: 8\n/soc/pin-controller@40020000/gpio@40020800"]
+	60 [label="gpio@40020400\nOrdinal: 60 | Handle: 9\n/soc/pin-controller@40020000/gpio@40020400"]
+	59 [label="gpio@40020000\nOrdinal: 59 | Handle: 10\n/soc/pin-controller@40020000/gpio@40020000"]
+	8 -> 60
 	8 -> 52
-	8 -> 57
-	8 -> 48
+	8 -> 59
+	8 -> 54
+	8 -> 53
 	8 -> 49
-	58 -> 62
-	57 -> 62
-	85 -> 90
+	8 -> 50
+	8 -> 51
 }
